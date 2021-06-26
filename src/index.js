@@ -20,7 +20,9 @@ function changeValue(){
 }; 
 
 function render(response){
+    
   refs.searchingForm.insertAdjacentHTML('afterend', template(response));
+    
 };
 
 
