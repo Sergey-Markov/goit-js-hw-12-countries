@@ -1,5 +1,5 @@
-function fetchCountries(){
-   return fetch(`https://restcountries.eu/rest/v2/name/usa`)
+function fetchCountries(country){
+   return fetch(`https://restcountries.eu/rest/v2/name/${country}`)
        .then(response => {
            return response.json();
        })

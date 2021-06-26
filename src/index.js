@@ -8,24 +8,22 @@ const refs = {
     searchingForm: document.getElementById('searching'),
 };
 
-// refs.countrySearch.addEventListener('input', debounce(changeValue, 4000));
+
+refs.countrySearch.addEventListener('input', debounce(changeValue, 500));
 
 
-// function changeValue(){
-//    return console.log(refs.countrySearch.value);
-// }; 
+function changeValue(){
+    const country = refs.countrySearch.value;
+    fetchCountries(country)
+        .then(render)
+        .catch(reject => console.log('error:',reject));
+}; 
 
-// function render(response){
-//   return console.log( refs.searchingForm.insertAdjacentHTML('afterend', template(response)));
-// };
+function render(response){
+  refs.searchingForm.insertAdjacentHTML('afterend', template(response));
+};
 
-fetchCountries().then(response => {
-    console.log(response);
-    const markup = template(response);
-    console.log(markup);
-//    const markup = template(response);
-//    console.log(markup);
-})
+
 
 
 
