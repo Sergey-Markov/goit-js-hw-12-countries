@@ -1,23 +1,27 @@
-{{#each this}}
+{{#each this}}   
+  <h1 class="country">{{name}}</h1>
   <div class="container">
-        <h1 class="country">{{name}}</h1>
-        <p class="capital">
+      <div class="tpl_content-text">
+        <p class="info">
           <span class="countrySpecification">Capital:</span>
           {{capital}}
         </p>
-        <p class="population">
+        <p class="info">
           <span class="countrySpecification">Population:</span>
           {{population}}
         </p>
-        <p class="languages">
+        <p>
           <span class="countrySpecification">Languages:</span>
           <ul class="languages_list">
               {{#each languages}}
-                  <li>{{name}}</li>
+                  <li class="info">{{name}}</li>
               {{/each}}
           </ul>
         </p>
-        <img src={{flag}} alt={{name}}>
+       </div>
+        <div class="tpl_content-flag">
+          <img class="flag" src={{flag}} alt={{name}}>
+        </div>
   </div>
 {{/each}}
 
